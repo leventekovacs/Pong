@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Label;
 
 
 import java.net.URL;
@@ -29,6 +30,12 @@ public class LeaderboardsController implements Initializable {
     @FXML
     private AnchorPane playerVsAILeaderboardPane;
 
+    @FXML
+    private Label singlePlayerRank1Label;
+
+    @FXML
+    private Label playerVsAIRank1Label;
+
     private static ObservableList<SinglePlayerGameResult> singlePlayerLeaderboardData;
     private static ObservableList<PlayerVsAIGameResult> playerVsAILeaderboardData;
 
@@ -38,6 +45,8 @@ public class LeaderboardsController implements Initializable {
         playerVsAILeaderboardData = GameManager.getDatabase().getPlayerVsAIGameData();
         createTables();
         switchToSinglePlayerLeaderboard();
+        singlePlayerRank1Label.setText(GameManager.getDatabase().getSinglePlayerRank1Name());
+        playerVsAIRank1Label.setText(GameManager.getDatabase().getPlayerVsAIRank1Name());
     }
 
     @FXML

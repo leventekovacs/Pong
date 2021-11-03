@@ -20,6 +20,7 @@ public class Database {
 
     private Connection connection = null;
     private Statement statement = null;
+    PreparedStatement preparedStatement = null;
     private DatabaseMetaData databaseMetaData = null;
     private ResultSet resultSet = null;
 
@@ -68,14 +69,14 @@ public class Database {
             preparedStatement.setString(4, singlePlayerGameResult.getDate());
             preparedStatement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(""+e);
         }
     }
 
     public void addPlayerVsAIGameResult(PlayerVsAIGameResult playerVsAIGameResult) {
         String sql = "insert into player_vs_ai_game_result values(?,?,?,?,?)";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, playerVsAIGameResult.getName());
             preparedStatement.setString(2, playerVsAIGameResult.getDifficulty());
             preparedStatement.setString(3, playerVsAIGameResult.getResult());
@@ -83,31 +84,8 @@ public class Database {
             preparedStatement.setInt(5, playerVsAIGameResult.getPoint());
             preparedStatement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(""+e);
         }
-    }
-
-    public void test() {
-        try {
-            resultSet = statement.executeQuery(PLAYER_VS_AI_GAME_RESULT_QUERY);
-            while (resultSet.next()) {
-                System.out.print(resultSet.getString(1) +"\t\t");
-                System.out.print(resultSet.getString(2)+"\t\t");
-                System.out.print(resultSet.getString(3)+"\t\t");
-                System.out.print(resultSet.getString(4)+"\t\t");
-               System.out.println(resultSet.getInt(5));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        /**
-        try {
-            statement.execute("delete from player_vs_ai_game_result where result like 'error'");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-         */
     }
 
     public ObservableList<SinglePlayerGameResult> getSinglePlayerGameData() {
@@ -149,5 +127,60 @@ public class Database {
             e.printStackTrace();
         }
         return data;
+    }
+
+    public String getSinglePlayerRank1Name() {
+        String sql = "SELECT name from single_player_game_result ORDER BY time DESC fetch first 1 rows only";
+        try {
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next())
+                return resultSet.getString(1);
+        } catch (SQLException e) {
+            System.out.println(""+e);
+        }
+        return null;
+    }
+
+    public String getPlayerVsAIRank1Name() {
+        String sql = "SELECT name from player_vs_ai_game_result ORDER BY point DESC fetch first 1 rows only";
+        try {
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next())
+                return resultSet.getString(1);
+        } catch (SQLException e) {
+            System.out.println(""+e);
+        }
+        return null;
+    }
+
+
+    public void test() {
+        /**
+        try {
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         */
+
+        /**
+         try {
+         statement.execute("delete from player_vs_ai_game_result where difficulty like 'Extreme'");
+         } catch (SQLException e) {
+         e.printStackTrace();
+         }
+         */
+
+         /**
+        try {
+            statement.execute("UPDATE single_player_game_result SET name = 'Bence' where name like'bence'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+         */
     }
 }

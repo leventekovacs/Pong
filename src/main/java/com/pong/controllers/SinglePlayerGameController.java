@@ -7,7 +7,6 @@ import com.pong.components.Paddle;
 import com.pong.constants.Constants;
 import com.pong.engines.GameEngine;
 import com.pong.model.AddDataToDatabase;
-import com.pong.model.Database;
 import com.pong.model.SinglePlayerGameResult;
 import com.pong.timer.Stopwatch;
 import javafx.animation.Animation;
@@ -113,7 +112,6 @@ public class SinglePlayerGameController extends GameEngine implements Initializa
                 ball.setVelX(ball.getVelX() + Constants.BALL_VELOCITY_INCREASE);
             }
             hit++;
-            return;
         }
     }
 
@@ -144,7 +142,7 @@ public class SinglePlayerGameController extends GameEngine implements Initializa
     @Override
     public void addGameResultToDatabase() {
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("Y.MM.dd HH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("y.MM.dd HH:mm");
 
         SinglePlayerGameResult singlePlayerGameResult = new SinglePlayerGameResult(0, GameManager.getPlayerName(), stopwatch.getTime(), hit, simpleDateFormat.format(date));
 

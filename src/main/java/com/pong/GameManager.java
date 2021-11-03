@@ -75,7 +75,6 @@ public class GameManager extends Application {
         SceneManager.loadFXML("mainMenu-view.fxml");
         primaryStage.setScene(mainMenuScene);
         primaryStage.show();
-        database.test();
     }
 
     public static void startGame(String[] args) {

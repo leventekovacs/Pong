@@ -2,14 +2,14 @@ package com.pong.model;
 
 public class PlayerVsAIGameResult {
 
-    private int rank;
-    private String name;
-    private String difficulty;
-    private String result;
-    private String date;
-    private int point;
+    private final int rank;
+    private final String name;
+    private final String difficulty;
+    private final String result;
+    private final String date;
+    private final int point;
 
-    public PlayerVsAIGameResult(int rank) {
+    public PlayerVsAIGameResult() {
         rank = 0;
         name = "";
         difficulty = "";

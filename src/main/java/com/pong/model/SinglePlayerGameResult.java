@@ -1,15 +1,12 @@
 package com.pong.model;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-
 public class SinglePlayerGameResult {
 
-    private int rank;
-    private String name;
-    private String time;
-    private int hit;
-    private String date;
+    private final int rank;
+    private final String name;
+    private final String time;
+    private final int hit;
+    private final String date;
 
     public SinglePlayerGameResult() {
         rank = 0;
@@ -40,4 +37,5 @@ public class SinglePlayerGameResult {
     public String getDate() {
         return date;
     }
+
 }

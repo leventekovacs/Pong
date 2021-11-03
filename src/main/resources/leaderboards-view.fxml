@@ -61,7 +61,7 @@
                         <Font name="Impact" size="24.0" />
                     </font>
                 </Label>
-                <Label layoutX="470.0" layoutY="624.0" prefHeight="40.0" prefWidth="104.0" textFill="#ff6483">
+                <Label fx:id="singlePlayerRank1Label" layoutX="510.0" layoutY="630.0" prefHeight="40.0" prefWidth="200.0" textFill="#ff6483">
                     <font>
                         <Font name="Impact" size="24.0" />
                     </font>
@@ -79,7 +79,7 @@
                         <Font name="Impact" size="24.0" />
                     </font>
                 </Label>
-                <Label layoutX="470.0" layoutY="624.0" prefHeight="40.0" prefWidth="104.0" textFill="#ff6483">
+                <Label fx:id="playerVsAIRank1Label" layoutX="510.0" layoutY="630.0" prefHeight="40.0" prefWidth="200.0" textFill="#ff6483">
                     <font>
                         <Font name="Impact" size="24.0" />
                     </font>
