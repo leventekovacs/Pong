@@ -63,7 +63,7 @@ public class PlayerVsAIGameController extends MultiPlayerGameEngine implements I
             drawDifficulty(gc);
 
             ball.moveBall();
-            //moveAIPaddle();
+            moveAIPaddle();
             collision(ball,paddleLeft,paddleRight);
 
             if(ballOutside(ball)) {
