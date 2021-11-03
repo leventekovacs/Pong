@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="pong.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pong.controllers.MainMenuController">
+   <Rectangle fill="#c3c3c3" height="600.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+
+   <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@background.jpg" />
+   </ImageView>
+
+   <Button id="singlePlayerGameButton" alignment="CENTER" layoutX="73.0" layoutY="454.0" onAction="#startSinglePlayerGame" prefHeight="69.0" prefWidth="268.0" rotate="21.0" text="Single Player" />
+   <VBox layoutX="535.0" layoutY="300.0" prefHeight="256.0" prefWidth="242.0" spacing="30.0">
+      <Button alignment="CENTER" lineSpacing="20.0" onAction="#startPlayerVsAIGame" prefHeight="21.0" prefWidth="240.0" text="Player vs AI" />
+      <Button alignment="CENTER" onAction="#startPlayerVsPlayer" prefHeight="21.0" prefWidth="240.0" text="Player vs Player" />
+      <Button alignment="CENTER" onAction="#viewLeaderboards" prefHeight="21.0" prefWidth="240.0" text="Leaderboards" />
+      <Button alignment="CENTER" onAction="#closeApp" prefHeight="21.0" prefWidth="240.0" text="Exit" />
+   </VBox>
+   <AnchorPane fx:id="logInPane" layoutX="471.0" layoutY="26.0" prefHeight="240.0" prefWidth="330.0">
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#acacac" height="191.0" layoutX="13.0" layoutY="25.0" opacity="0.5" rotate="6.3" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="305.0" />
+      <Button id="logButton" layoutX="207.0" layoutY="172.0" onAction="#logIn" prefHeight="14.0" prefWidth="83.0" rotate="-10.7" text="Log in" />
+      <Label layoutX="33.0" layoutY="76.0" prefHeight="44.0" prefWidth="66.0" text="Name:" textAlignment="CENTER" textFill="#f5ff6e">
+         <font>
+            <Font name="Impact" size="22.0" />
+         </font>
+      </Label>
+      <TextField id="nameTextField" fx:id="nameTextField" layoutX="99.0" layoutY="76.0" prefHeight="44.0" prefWidth="177.0" />
+      <Label fx:id="infoLabel" layoutX="70.0" layoutY="142.0" prefHeight="44.0" prefWidth="127.0" rotate="-12.7" text="Log in first!" textAlignment="CENTER" textFill="#ff6483">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Label>
+   </AnchorPane>
+   <AnchorPane fx:id="logOutPane" layoutX="471.0" layoutY="26.0" prefHeight="240.0" prefWidth="330.0">
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#acacac" height="191.0" layoutX="13.0" layoutY="25.0" opacity="0.5" rotate="6.3" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="305.0" />
+      <Button id="logButton" layoutX="207.0" layoutY="172.0" onAction="#logOut" prefHeight="14.0" prefWidth="83.0" rotate="-10.7" text="Log out" />
+      <Label layoutX="42.0" layoutY="48.0" prefHeight="44.0" prefWidth="214.0" text="You are playing as" textAlignment="CENTER" textFill="#f5ff6e">
+         <font>
+            <Font name="Impact" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="81.0" layoutY="120.0" prefHeight="28.0" prefWidth="168.0" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="32.0" />
+         </font>
+      </Label>
+   </AnchorPane>
+</AnchorPane>
