@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class Database {
-    private final String URL = "jdbc:derby:lib\\PongDB";
+    private final String URL = "jdbc:derby:PongDB";
     private final String USERNAME = "";
     private final String PASSWORD = "";
 
