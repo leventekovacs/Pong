@@ -27,35 +27,22 @@ public class Database {
     public Database() {
         try {
             connection = DriverManager.getConnection(URL);
-        } catch (SQLException e) {
-            System.out.println(""+e);
-        }
-
-        if (connection != null){
-            try {
-                statement = connection.createStatement();
-            } catch (SQLException e) {
-                System.out.println(""+e);
-            }
-        }
-
-        try {
+            statement = connection.createStatement();
             databaseMetaData = connection.getMetaData();
-        } catch (SQLException e) {
-            System.out.println(""+e);
-        }
 
-        try {
             resultSet = databaseMetaData.getTables(null,"APP","SINGLE_PLAYER_GAME_RESULT",null);
+
             if(!resultSet.next()) {
                 statement.execute(CREAT_SINGLE_PLAYER_GAME_RESULT_TABLE);
             }
             resultSet = databaseMetaData.getTables(null,"APP","PLAYER_VS_AI_GAME_RESULT",null);
+
             if(!resultSet.next()) {
                 statement.execute(CREAT_PLAYER_VS_AI_GAME_RESULT_TABLE);
             }
+
         } catch (SQLException e) {
-            System.out.println(""+e);
+            System.out.println(""+e.getMessage());
         }
     }
 
@@ -69,7 +56,7 @@ public class Database {
             preparedStatement.setString(4, singlePlayerGameResult.getDate());
             preparedStatement.execute();
         } catch (SQLException e) {
-            System.out.println(""+e);
+            System.out.println(""+e.getMessage());
         }
     }
 
@@ -84,7 +71,7 @@ public class Database {
             preparedStatement.setInt(5, playerVsAIGameResult.getPoint());
             preparedStatement.execute();
         } catch (SQLException e) {
-            System.out.println(""+e);
+            System.out.println(""+e.getMessage());
         }
     }
 
@@ -136,7 +123,7 @@ public class Database {
             if(resultSet.next())
                 return resultSet.getString(1);
         } catch (SQLException e) {
-            System.out.println(""+e);
+            System.out.println(""+e.getMessage());
         }
         return null;
     }
@@ -148,7 +135,7 @@ public class Database {
             if(resultSet.next())
                 return resultSet.getString(1);
         } catch (SQLException e) {
-            System.out.println(""+e);
+            System.out.println(""+e.getMessage());
         }
         return null;
     }
