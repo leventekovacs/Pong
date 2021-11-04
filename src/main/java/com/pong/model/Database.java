@@ -24,7 +24,7 @@ public class Database {
     private DatabaseMetaData databaseMetaData = null;
     private ResultSet resultSet = null;
 
-    public Database() {
+    public Database() {  // one try catch block where you use multiple catch block
         try {
             connection = DriverManager.getConnection(URL);
             statement = connection.createStatement();
@@ -140,34 +140,4 @@ public class Database {
         return null;
     }
 
-
-    public void test() {
-        /**
-        try {
-            resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-         */
-
-        /**
-         try {
-         statement.execute("delete from player_vs_ai_game_result where difficulty like 'Extreme'");
-         } catch (SQLException e) {
-         e.printStackTrace();
-         }
-         */
-
-         /**
-        try {
-            statement.execute("UPDATE single_player_game_result SET name = 'Bence' where name like'bence'");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-         */
-    }
 }
