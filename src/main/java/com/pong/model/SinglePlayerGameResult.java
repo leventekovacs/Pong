@@ -24,16 +24,25 @@ public class SinglePlayerGameResult {
         this.date = date;
     }
 
-    public int getRank() { return rank; }
+    public int getRank() { return rank; } // every getter and setter should look like the same, 
+    /*
+    public int getRank() { 
+        return rank; 
+    } 
+    */
+    
     public String getName() {
         return name;
     }
+    
     public String getTime() {
         return time;
     }
+    
     public int getHit() {
         return hit;
     }
+    
     public String getDate() {
         return date;
     }
