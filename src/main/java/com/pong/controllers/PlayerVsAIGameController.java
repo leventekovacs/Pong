@@ -144,61 +144,81 @@ public class PlayerVsAIGameController extends MultiPlayerGameEngine implements I
             case BEGINNER -> {
                 difficultyString = "Beginner";
                 if (result.charAt(0) == '3') {
-                    if (result.charAt(4) == '0') point += 17;
-                    if (result.charAt(4) == '1') point += 16;
-                    if (result.charAt(4) == '2') point += 15;
+                    switch(result.charAt(4)) {
+                        case '0' -> point+=17;
+                        case '1' -> point+=16;
+                        case '2' -> point+=15;
+                    }
                 } else {
-                    if (result.charAt(0) == '0') point += 0;
-                    if (result.charAt(0) == '1') point += 5;
-                    if (result.charAt(0) == '2') point += 10;
+                    switch(result.charAt(0)) {
+                        case '0' -> point+=0;
+                        case '1' -> point+=5;
+                        case '2' -> point+=10;
+                    }
                 }
             }
             case EASY -> {
                 difficultyString = "Easy";
                 if (result.charAt(0) == '3') {
-                    if (result.charAt(4) == '0') point += 20;
-                    if (result.charAt(4) == '1') point += 19;
-                    if (result.charAt(4) == '2') point += 18;
+                    switch(result.charAt(4)) {
+                        case 0 -> point+=20;
+                        case 1 -> point+=19;
+                        case 2 -> point+=18;
+                    }
                 } else {
-                    if (result.charAt(0) == '0') point += 1;
-                    if (result.charAt(0) == '1') point += 6;
-                    if (result.charAt(0) == '2') point += 11;
+                    switch(result.charAt(0)) {
+                        case '0' -> point+=1;
+                        case '1' -> point+=6;
+                        case '2' -> point+=11;
+                    }
                 }
             }
             case MEDIUM -> {
                 difficultyString = "Medium";
                 if (result.charAt(0) == '3') {
-                    if (result.charAt(4) == '0') point += 23;
-                    if (result.charAt(4) == '1') point += 22;
-                    if (result.charAt(4) == '2') point += 21;
+                    switch(result.charAt(4)) {
+                        case 0 -> point+=23;
+                        case 1 -> point+=22;
+                        case 2 -> point+=21;
+                    }
                 } else {
-                    if (result.charAt(0) == '0') point += 2;
-                    if (result.charAt(0) == '1') point += 7;
-                    if (result.charAt(0) == '2') point += 12;
+                    switch(result.charAt(0)) {
+                        case 0 -> point+=2;
+                        case 1 -> point+=7;
+                        case 2 -> point+=12;
+                    }
                 }
             }
             case HARD -> {
                 difficultyString = "Hard";
                 if (result.charAt(0) == '3') {
-                    if (result.charAt(4) == '0') point += 26;
-                    if (result.charAt(4) == '1') point += 25;
-                    if (result.charAt(4) == '2') point += 24;
+                    switch(result.charAt(4)) {
+                        case 0 -> point+=26;
+                        case 1 -> point+=25;
+                        case 2 -> point+=24;
+                    }
                 } else {
-                    if (result.charAt(0) == '0') point += 3;
-                    if (result.charAt(0) == '1') point += 8;
-                    if (result.charAt(0) == '2') point += 13;
+                    switch(result.charAt(0)) {
+                        case 0 -> point+=3;
+                        case 1 -> point+=8;
+                        case 2 -> point+=13;
+                    }
                 }
             }
             case EXTREME -> {
                 difficultyString = "Extreme";
                 if (result.charAt(0) == '3') {
-                    if (result.charAt(4) == '0') point += 29;
-                    if (result.charAt(4) == '1') point += 28;
-                    if (result.charAt(4) == '2') point += 27;
+                    switch(result.charAt(4)) {
+                        case 0 -> point+=29;
+                        case 1 -> point+=28;
+                        case 2 -> point+=27;
+                    }
                 } else {
-                    if (result.charAt(0) == '0') point += 4;
-                    if (result.charAt(0) == '1') point += 9;
-                    if (result.charAt(0) == '2') point += 5;
+                    switch(result.charAt(0)) {
+                        case 0 -> point+=4;
+                        case 1 -> point+=9;
+                        case 2 -> point+=5;
+                    }
                 }
             }
             default -> throw new IllegalStateException("Unexpected value: " + this.difficulty);
