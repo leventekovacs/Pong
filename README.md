@@ -1,7 +1,4 @@
-# Pong
-
-A Pong.jar indításához 17-es jdk szükséges. <br />
-Az app JavaFX-et és beépített Derby adatbázist használ. <br />
+# Pong (JavaFX)
 
 ![image](https://user-images.githubusercontent.com/93653988/147991893-59fee2ac-4cc2-4fa0-9eb4-9ce2523f597e.png)
 ![image](https://user-images.githubusercontent.com/93653988/147991989-fb813f3a-5419-4ae6-8e71-752c66f60184.png)
